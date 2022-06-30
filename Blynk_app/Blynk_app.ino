@@ -1,6 +1,6 @@
-#define BLYNK_PRINT.serial
+#define BLYNK_PRINT Serial
 #include <ESP8266WiFi.h>
-#include <BlynkSimpleESP8266.h>
+#include <BlynkSimpleEsp8266.h>
 
 #define relay1 5
 #define relay2 2
@@ -59,14 +59,14 @@ void setup(){
     pinMode(relay3,OUTPUT);
     pinMode(relay4,OUTPUT);
 
-    digitWrite(relay1,HIGH);
-    digitWrite(relay2,HIGH);
-    digitWrite(relay3,HIGH);
-    digitWrite(relay4,HIGH);
+    digitalWrite(relay1,HIGH);
+    digitalWrite(relay2,HIGH);
+    digitalWrite(relay3,HIGH);
+    digitalWrite(relay4,HIGH);
 
     Blynk.begin(auth,ssid,pass,"blynk.cloud",80);
 }
 
 void loop(){
-    Blynk.begin();
+    Blynk.run();
 }
